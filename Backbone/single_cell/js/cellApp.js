@@ -19,3 +19,12 @@ var helaCancerCell = new app.singleCell({
 	img: "images/helaCell.jpeg",
 	link: "helaCell"
 });
+
+
+console.log(redBloodCells.toJSON());
+console.log(osteoclast.toJSON());
+console.log(helaCancerCell.toJSON());
+
+
+
+
