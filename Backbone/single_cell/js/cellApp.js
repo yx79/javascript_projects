@@ -1,4 +1,4 @@
-var redBloodCells = new app.singleCell({
+var redBloodCell = new app.singleCell({
 	name: "Red Blood Cells",
 	shape: "Hemoglobin Structure",
 	color: "red",
@@ -20,13 +20,45 @@ var helaCancerCell = new app.singleCell({
 	link: "helaCell"
 });
 
+var neuronsCell = new app.singleCell({
+	name: "Neuron Cell",
+	link: "neuronCell"
+});
 
-console.log(redBloodCells.toJSON());
+
+console.log(redBloodCell.toJSON());
 console.log(osteoclast.toJSON());
 console.log(helaCancerCell.toJSON());
 
 // change the corlor
-redBloodCells.set('color', "white");
+redBloodCell.set('color', "white");
+
+// create cell collection group
+var cellGroup = new app.CellsCollection([
+	redBloodCell, osteoclast, neuronsCell
+]);
+
+cellGroup.add(helaCancerCell);
+cellGroup.remove(neuronsCell);
+
+
+console.log(cellGroup.toJSON());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
