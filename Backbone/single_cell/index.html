@@ -21,6 +21,17 @@
 
   </div>  
 
+
+  <script id="cellElement" type="text/template">
+    <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>"> class="image" /></a>
+    <ul>
+      <li class="cellInfo"><strong>Name:</strong>> <%= name %><li>
+      <li class="cellInfo"><strong>Shape:</strong>> <%= shape %><li>
+      <li class="cellInfo"><strong>Color:</strong>> <%= color %><li>
+    </ul>
+  </script>
+
+
   <script src="js/libs/jquery.js"></script>
   <script src="js/libs/underscore.js"></script>
   <script src="js/libs/backbone.js"></script>

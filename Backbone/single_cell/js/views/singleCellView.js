@@ -7,5 +7,14 @@ app.singleCellView = Backbone.View.extend({
 	tagName: "article",
 	className: "cellListItem",
 
+	template: _.template(  $("#cellElement").html()  ),
+
+	render: function() {
+		var flowerTemplate = this.template(this.model.toJSON());
+		this.$el.html(cellTemplate);
+		return this;
+	}
+
+
 
 });
