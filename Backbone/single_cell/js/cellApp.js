@@ -25,6 +25,9 @@ console.log(redBloodCells.toJSON());
 console.log(osteoclast.toJSON());
 console.log(helaCancerCell.toJSON());
 
+// change the corlor
+redBloodCells.set('color', "white");
+
 
 
 

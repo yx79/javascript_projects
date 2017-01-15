@@ -8,6 +8,10 @@ app.singleCell = Backbone.Model.extend({
 
 	initialize: function() {
 		console.log("A model isntance named " + this.get("name") + " has been created.");
+
+		this.on('change', function() {
+			console.log("Model changed");
+		});
 	}
 
 })
