@@ -13,6 +13,20 @@ app.singleCellView = Backbone.View.extend({
 		var cellTemplate = this.template(this.model.toJSON());
 		this.$el.html(cellTemplate);
 		return this;
+	},
+
+	// // Events
+	events: {
+		'mouseover': 'addBgColor',
+		'mouseout': 'removeBgColor'
+	},
+
+	addBgColor: function() {
+		this.$el.addClass("bgColorImage");
+	},
+
+	removeBgColor: function() {
+		this.$el.removeClass("bgColorImage");
 	}
 
 
