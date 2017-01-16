@@ -2,13 +2,14 @@
 var app = app || {};
 
 // The view for all the cells
-app.allCellsView = Backbone.View.extend(){
+app.allCellsView = Backbone.View.extend({
+
 	tagName: "section",
 
 	render: function() {
 		this.collection.each(this.addCell, this);
 		return this;
-	}
+	},
 
 	addCell: function(cell) {
 		var cellView = new app.singleCellView ({ model: cell });
@@ -17,4 +18,4 @@ app.allCellsView = Backbone.View.extend(){
 
 
 
-};
+});

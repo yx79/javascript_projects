@@ -9,7 +9,7 @@ var redBloodCell = new app.singleCell({
 var osteoclast = new app.singleCell({
 	name: "Osteoclasts bone cell",
 	shape: "Flat and pancake-shaped",
-	img: "images/ocyteBondCell.jpg",
+	img: "images/ocyteBoneCell.jpg",
 	link: "boneCell"
 });
 
@@ -25,18 +25,21 @@ var neuronsCell = new app.singleCell({
 	link: "neuronCell"
 });
 
+// create cell collection group
+var cellGroup = new app.CellsCollection([
+	redBloodCell, osteoclast, neuronsCell
+]);
+
+
 
 console.log(redBloodCell.toJSON());
 console.log(osteoclast.toJSON());
 console.log(helaCancerCell.toJSON());
 
 // change the corlor
-redBloodCell.set('color', "white");
+helaCancerCell.set('color', "none");
 
-// create cell collection group
-var cellGroup = new app.CellsCollection([
-	redBloodCell, osteoclast, neuronsCell
-]);
+
 
 cellGroup.add(helaCancerCell);
 cellGroup.remove(neuronsCell);
@@ -45,6 +48,9 @@ cellGroup.remove(neuronsCell);
 console.log(cellGroup.toJSON());
 
 
+var cellGroupView = new app.allCellsView({ collection: cellGroup});
+
+$("#allCells").html(cellGroupView.render().el);
 
 
 
